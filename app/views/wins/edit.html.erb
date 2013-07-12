@@ -5,19 +5,25 @@
   <%= simple_form_for @win, html: { class: 'form-vertical' } do |f| %>
 
     <div class='span12'>
-      <%= f.input :deployed, label: 'App Deployed?' %>
+      <%= f.input :deployed, label: "App Deployed?", wrapper: :checkbox, label_html: { class: :checkbox } %>
       <%= f.input :deploy_url, label: 'Deploy URL' %>
-      <%= f.input :published, label: 'Data Published?' %>
+      
+      <%= f.input :published, label: "Data Published?", wrapper: :checkbox, label_html: { class: :checkbox } %>
       <%= f.input :publish_url, label: 'Publish URL' %>
-      <%= f.input :open_sourced, label: 'Open Sourced?' %>
+      
+      <%= f.input :open_sourced, label: "Open Sourced?", wrapper: :checkbox, label_html: { class: :checkbox } %>
       <%= f.input :open_source_url, label: 'Open Source URL' %>
-      <%= f.input :open_policy, label: 'open or lean policy change?' %>
+      
+      <%= f.input :open_policy, label: "open or lean policy change?", wrapper: :checkbox, label_html: { class: :checkbox } %>
       <%= f.input :open_policy_infos, label: 'Policy Text' %>
-      <%= f.input :event_held, label: 'Event held?' %>
+      
+      <%= f.input :event_held, label: "Event held?", wrapper: :checkbox, label_html: { class: :checkbox } %>
       <%= f.input :event_infos, label: 'Event infos' %>
-      <%= f.input :municipal_partner, label: 'is a municipal partner project' %>
+      
+      <%= f.input :municipal_partner, label: "is a municipal partner project?", wrapper: :checkbox, label_html: { class: :checkbox } %>
       <%= f.input :municipal_partner_infos, label: 'partner name' %>
-      <%= f.input :funds, label: 'Has received funds?' %>
+      
+      <%= f.input :funds, label: "Has received funds?", wrapper: :checkbox, label_html: { class: :checkbox } %>
       <%= f.input :story, as: :text %>
       
       <%= f.input :deployed_application_id, collection: (DeployedApplication.where(brigade_id: 1).all.map { |application| [application.name, application.id] }.sort) %>

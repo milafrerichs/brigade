@@ -1,0 +1,28 @@
+<header class="page-id">
+  <h1>
+    <%= t("wins.show.title") %>
+  </h1>
+</header>
+
+<div id="leftcolumn" class='span7'>
+  <h2>
+    <% if can? :edit, @win %>
+      <%= link_to t("wins.show.edit"), edit_win_path(@win) %>
+    <% end %>
+  </h2>
+  <table class="win-info" cellpadding="4">
+    <tr>
+      <th colspan="2" class="prv-label"><%= t("wins.show.deployed") %></th>
+    </tr>
+    <tr>
+      <td><%= t("#{@win.deployed?}") %></td>
+      <td><%= link_to @win.deploy_url, @win.deploy_url %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="prv-label"><%= t("wins.show.published") %></th>
+    </tr>
+    <tr>
+      <td><%= t("#{@win.published?}") %></td>
+      <td><%= link_to @win.publish_url, @win.publish_url %></td>
+    </tr>
+  </table>
