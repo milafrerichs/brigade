@@ -1,0 +1,57 @@
+  <%= simple_form_for @win, html: { class: 'form-vertical' } do |f| %>
+
+    <div class='span12'>
+      
+      <dl id="win-edit" class="win">
+        <dt><%= t("wins.show.deployed") %></dt>
+        <dd>
+          <%= f.check_box :deployed,class: "toggle", label: false %>
+          <%= f.input :deploy_url, placeholder: t("wins.edit.deploy_hint"), label: false, hint: t("wins.edit.deploy_hint") %>
+        </dd>
+        <dt><%= t("wins.show.published") %></dt>
+        <dd>
+          <%= f.check_box :published, class: "toggle", label: false %>
+          <%= f.input :publish_url, placeholder: t("wins.edit.publish_hint"), label: false, hint: t("wins.edit.publish_hint") %>
+        </dd>
+        <dt><%= t("wins.show.open_source") %></dt>
+        <dd>
+          <%= f.check_box :open_sourced, class: "toggle", label: false %>
+          <%= f.input :open_source_url, placeholder: t("wins.edit.open_source_hint"), label: false, hint: t("wins.edit.open_source_hint") %>
+        </dd>
+        <dt><%= t("wins.show.open_policy") %></dt>
+        <dd>
+          <%= f.check_box :open_policy, class: "toggle", label: false %>
+          <%= f.input :open_policy_infos, placeholder: t("wins.edit.open_policy_hint"), label: false, hint: t("wins.edit.open_policy_hint") %>
+        </dd>
+        <dt><%= t("wins.show.event") %></dt>
+        <dd>
+          <%= f.check_box :event_held, class: "toggle", label: false %>
+          <%= f.input :event_infos, placeholder: t("wins.edit.event_infos_hint"), label: false, hint: t("wins.edit.event_infos_hint") %>
+        </dd>
+        <dt><%= t("wins.show.municipal_partner") %></dt>
+        <dd>
+          <%= f.check_box :municipal_partner, class: "toggle", label: false %>
+          <%= f.input :municipal_partner_infos, placeholder: t("wins.edit.municipal_partner_hint"), label: false, hint: t("wins.edit.municipal_partner_hint") %>
+        </dd>
+        <dt><%= t("wins.show.funds") %></dt>
+        <dd>
+          <%= f.check_box :funds, class: "toggle", label: false %>
+          <div class="control-group">&nbsp;</div>
+        </dd>
+        <dt><%= t("wins.show.story") %></dt>
+        <dd>
+          <%= f.input :story, as: :text, label:false %>
+        </dd>
+        <dt><%= t("wins.show.brigade_application") %></dt>
+        <dd><%= f.input :deployed_application_id, collection: (DeployedApplication.where(brigade_id: 1).all.map { |application| [application.name, application.id] }.sort), label: false %></dd>
+        <dt><%= t("wins.show.location") %></dt>
+        <dd><%= f.input :location_id, collection: (Location.all.map { |location| [location.name, location.id] }.sort << ['Add Location', 'Add Location']), input_html: { class: 'location-selector' }, label: false %></dd>
+      </dl>
+      <div>
+        <%= f.input :brigade_id, as: :hidden, value: @win.brigade_id %>
+        <%= f.button :submit %>
+      </div>          
+      <br/>
+    </div>
+    
+  <% end %>

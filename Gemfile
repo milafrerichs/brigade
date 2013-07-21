@@ -20,6 +20,7 @@ gem 'psych'
 
 #Simple form for better form management
 gem 'simple_form', '~> 2.0.0.rc'
+gem 'strong_parameters'
 
 #Rails Admin for managing the database
 gem 'rails_admin', '~> 0.4.4'

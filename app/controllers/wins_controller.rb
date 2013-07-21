@@ -3,7 +3,14 @@ class WinsController < ApplicationController
   load_and_authorize_resource
   
   def new
-    
+    @win = Win.new(brigade_id: params[:brigade_id])
+    @location = Location.new
+  end
+  
+  def create
+    @win = Win.new(win_params)
+    @win.save
+    redirect_to @win
   end
   
   def show
@@ -25,5 +32,10 @@ class WinsController < ApplicationController
       flash[:error] = ""
     end
   end
-
+  
+  private 
+  
+  def win_params
+    params.require(:win).permit(:deployed, :deploy_url, :published, :publish_url, :open_sourced, :open_source_url, :open_policy, :open_policy_infos, :event_held, :event_infos, :municipal_partner, :municipal_partner_infos, :funds, :story, :deployed_application_id, :location_id, :brigade_id)
+  end
 end

@@ -68,6 +68,9 @@ CodeForAmerica::Application.routes.draw do
   resources :deployed_applications, only: [:index, :new, :create, :show]
   resources :challenges, only: [:new, :create, :index]
   resources :wins
+  
+  match "/wins/new/:brigade_id" => 'wins#new'
+  
   resources :home
   root :to => 'home#index'
 

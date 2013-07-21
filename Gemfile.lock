@@ -338,6 +338,10 @@ GEM
     sqlite3 (1.3.7)
     stamp (0.1.6)
     state_machine (1.1.2)
+    strong_parameters (0.2.1)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+      railties (~> 3.0)
     sunspot (1.3.3)
       pr_geohash (~> 1.0)
       rsolr (~> 1.0.7)
@@ -433,6 +437,7 @@ DEPENDENCIES
   sqlite3
   stamp (~> 0.1.6)
   state_machine (~> 1.1.2)
+  strong_parameters
   sunspot_rails (~> 1.3.0)
   sunspot_solr (~> 1.3.0)
   sunspot_test

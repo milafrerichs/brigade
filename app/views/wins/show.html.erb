@@ -10,19 +10,47 @@
       <%= link_to t("wins.show.edit"), edit_win_path(@win) %>
     <% end %>
   </h2>
-  <table class="win-info" cellpadding="4">
-    <tr>
-      <th colspan="2" class="prv-label"><%= t("wins.show.deployed") %></th>
-    </tr>
-    <tr>
-      <td><%= t("#{@win.deployed?}") %></td>
-      <td><%= link_to @win.deploy_url, @win.deploy_url %></td>
-    </tr>
-    <tr>
-      <th colspan="2" class="prv-label"><%= t("wins.show.published") %></th>
-    </tr>
-    <tr>
-      <td><%= t("#{@win.published?}") %></td>
-      <td><%= link_to @win.publish_url, @win.publish_url %></td>
-    </tr>
-  </table>
+  <dl id="win-info" class="win">
+    <dt><%= t("wins.show.deployed") %></dt>
+    <dd>
+      <input type="checkbox" <%= @win.deployed? ? 'checked="checked"' : '' %> class="toggle" disabled="disabled">
+      <label><%= link_to @win.deploy_url, @win.deploy_url %>&nbsp;</label>
+    </dd>
+    <dt><%= t("wins.show.published") %></dt>
+    <dd>
+      <input type="checkbox" <%= @win.published? ? 'checked="checked"' : '' %> class="toggle" disabled="disabled">
+      <label><%= link_to @win.publish_url, @win.publish_url %>&nbsp;</label>
+    </dd>
+    <dt><%= t("wins.show.open_source") %></dt>
+    <dd>
+      <input type="checkbox" <%= @win.open_sourced? ? 'checked="checked"' : '' %> class="toggle" disabled="disabled">
+      <label><%= link_to @win.open_source_url, @win.open_source_url %>&nbsp;</label>
+    </dd>
+    <dt><%= t("wins.show.open_policy") %></dt>
+    <dd>
+      <input type="checkbox" <%= @win.open_policy? ? 'checked="checked"' : '' %> class="toggle" disabled="disabled">
+      <label><%= @win.open_policy_infos %>&nbsp;</label>
+    </dd>
+    <dt><%= t("wins.show.event") %></dt>
+    <dd>
+      <input type="checkbox" <%= @win.event_held? ? 'checked="checked"' : '' %> class="toggle" disabled="disabled">
+      <label><%= @win.event_infos %>&nbsp;</label>
+    </dd>
+    <dt><%= t("wins.show.municipal_partner") %></dt>
+    <dd>
+      <input type="checkbox" <%= @win.municipal_partner? ? 'checked="checked"' : '' %> class="toggle" disabled="disabled">
+      <label><%= @win.municipal_partner_infos %>&nbsp;</label>
+    </dd>
+    <dt><%= t("wins.show.funds") %></dt>
+    <dd>
+      <input type="checkbox" <%= @win.funds? ? 'checked="checked"' : '' %> class="toggle" disabled="disabled">
+      <label>&nbsp;</label>
+    </dd>
+    <dt><%= t("wins.show.story") %></dt>
+    <dd>
+      <p><%= @win.story %></p>
+    </dd>
+  </dl>  
+  
+  
+<% #story, :deployed_application_id, :location_id, :brigade_id) %>

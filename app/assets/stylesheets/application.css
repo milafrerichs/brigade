@@ -7,6 +7,7 @@
  *= require footer
  *= require user-info
  *= require application-card
+ *= require wins
  *= require jquery.qtip.min
  *= require openimpact.css
 */

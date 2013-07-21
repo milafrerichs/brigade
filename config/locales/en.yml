@@ -12,3 +12,12 @@ en:
     location: Location
     skills: Skills
     brigades: Brigades
+ wins:
+  edit:
+    deploy_hint: Application URL
+    open_source_hint: Open Source URL
+    publish_hint: Data URL
+    open_policy_hint: open or lean policy url
+    event_infos_hint: Event URL
+    municipal_partner_hint: Partner Name
+    
