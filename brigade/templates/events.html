@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}Events Calendar{% endblock %}
+{% block description %}Events happening across the Code for America Brigade Network{% endblock %}
+{% block subhero_title %}Events{% endblock %}
+{% block subhero_description %}
+<p class="lead-in-text">Events happening across the Code for America Brigade Network</p>
+{% endblock %}
+{% block page_id %}events{% endblock %}
+{% block in_page_nav %}
+<nav>
+  <strong>On this page:</strong>
+  <a href="#key-dates" class="in-page-nav__link">Key Dates</a>
+  <a href="#workshops-and-meetings" class="in-page-nav__link">Workshops and Meetings</a>
+</nav>
+{% endblock %}
+{% block hero_right %}
+<div class="message">
+  <div class="message__icon">
+    <i class="fas fa-info-circle"></i>
+  </div>
+  <div class="message__content">
+    <strong>Looking for a brigade event?</strong> <a href="/">Use the map</a> to find your local brigade.
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section id="key-dates" class="slab slab--compact">
+  <div class="grid-box">
+    <div class="width-one-half">
+
+      <h2 class="slab__title">Key Dates</h2>
+
+      <p class="slab__subtitle">Brigades have an opportunity to participate in days of action and to come together at shared events. Check out the upcoming events and mark your calendar!</p>
+
+      <ul class="list list--no-bullets list--expanded">
+        <li>
+          <h3><small>March 2, 2019</small> <br>
+            <a href="http://opendataday.org/" target="_blank"><strong>Open Data Day</strong> <i class="fas fa-external-link-alt fa-xs"></i></a>
+          </h3>
+          <p>Many brigades participate in Open Data Day, an annual celebration of open data all over the world. It is an opportunity to showcase the benefits of civic technology and encourage the adoption of open data policies in government, business and civil society.</p>
+
+          <p><strong>Organizer resource:</strong> <a href="https://medium.com/code-for-america/open-data-day-planning-workshop-38ad9f82cab" target="_blank">Getting Ready for Open Data Day 2018</a></p>
+
+          </p>
+        </li>
+        <li>
+          <h3>
+            <small>May 29—31, 2019</small> <br>
+            <strong>Code for America Summit</strong>
+          </h3>
+          <p>
+            Come with your passion for building 21<sup>st</sup> century government. Leave with the strategies and tactics you need to do it. Join us in Oakland, California for three catalytic days with public servants, technologists, entrepreneurs and vendors at the 8<sup>th</sup> Code for America Summit.
+          </p>
+        </li>
+        <li>
+          <h3>
+            <small>September 21, 2019</small> <br>
+
+            <a href="http://nationaldayofcivichacking.org" target="_blank"><strong>National Day of Civic Hacking</strong> <i class="fas fa-external-link-alt fa-xs"></i></a>
+          </h3>
+          <p>
+            This annual event brings together public servants, people with technology skills, and community organizers, to show that government can work in the 21<sup>st</sup> century if we all build it together.
+          </p>
+        </li>
+
+        <li>
+          <h3><small>October 18–20, 2019</small><br>
+            <strong>Brigade Congress</strong>
+          </h3>
+          <p>
+            Brigade Congress is the primary in-person meeting centered on the Code for America Network, bringing together Brigade leaders, government and community partners, and civic tech professionals from across the country.
+          </p>
+          <p>
+            Brigade Congress 2019 will occur in <strong>Cleveland, OH</strong>. More details will be posted to <a href="https://www.codeforamerica.org/brigade-congress">the event's web page</a> as the date approaches.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="workshops-and-meetings" class="slab gray-bg-slab">
+  <div class="grid-box">
+    <div class="width-one-half">
+      <h2 class="slab__title">Workshops and Meetings</h2>
+      <ul>
+        <li>Code for America is helping build a network of civic technologists eager to share ideas and collaborate nationwide.</li>
+        <li>We host events like workshops, forums and meetings, to share knowledge, experiences and lessons learned.</li>
+        <li>All brigade members are encouraged to attend these events. To participate, check out the attached calendar.</li>
+      </ul>
+      <div class="message">
+        <div class="message__icon">
+          <i class="fas fa-question-circle"></i>
+        </div>
+        <div class="message__content">
+          <strong>Have a meeting or workshop to add to the calendar?</strong> <br>Let us know at <a href="mailto:brigade-info@codeforamerica.org">brigade-info@codeforamerica.org</a>
+        </div>
+      </div>
+    </div>
+    <div class="width-one-half">
+      <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=codeforamerica.org_e4fugvnjpk4b5fvgjfe916sa6g%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=America%2FLos_Angeles" style="border:solid 1px #777" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

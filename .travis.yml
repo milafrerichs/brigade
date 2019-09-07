@@ -1,20 +1,8 @@
-branches:
-  only:
-    - 'master'
-
-language: ruby
-rvm:
-  - 1.9.2
-  - 1.9.3
-
-env:
-  - DB=postgres BUILD_TYPE=other
-
-bundler_args: "--without development production heroku"
-before_script: "./script/ci/before.sh"
-script: "bundle exec rake travis"
-
-notifications:
-  irc:
-    channels:
-      - 'irc.freenode.org:6667#codeforamerica'
+language: python
+python:
+  - "2.7"
+install:
+  - pip install -r requirements.txt
+  - yarn install
+  - ./node_modules/.bin/webpack -p --bail
+script:  python manage.py runtests
